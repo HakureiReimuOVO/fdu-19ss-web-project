@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <link type="text/css" rel="styleSheet" href="CSS/reset.css">
+    <link type="text/css" rel="styleSheet" href="CSS/upload.css">
+    <script>
+        //显示上传的图片
+        function uploadImage(file, preview) {
+            var div = document.getElementById(preview);
+            if (file.files && file.files[0]) {
+                div.innerHTML = '<img id="Upload-Image">';
+                var img = document.getElementById("Upload-Image");
+                img.onload = function () {
+                    img.style.width = "50%";//设置图片的宽度
+                }
+                var reader = new FileReader();
+                reader.onload = function (evt) {
+                    img.src = evt.target.result;
+                }
+                reader.readAsDataURL(file.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <!--导航栏部分-->
+    <a class="navigation" href="home.html">HOME</a>
+    <a class="navigation" href="browser.html">BROWSE</a>
+    <a class="navigation" href="search.html">SEARCH</a>
+    <div class="dropdown">
+        <!--下拉菜单部分-->
+        <span class="dropdown-button">My Account</span>
+        <div class="dropdown-content">
+            <div class="dropdown-row">
+                <img src="../img/necessary-images/upload.png" height="20" width="20">
+                <a href="upload.html" id="active">Upload</a>
+            </div>
+            <div class="dropdown-row"><img src="../img/necessary-images/my_photo.png" height="20" width="20">
+                <a href="my_photo.html">My photo</a>
+            </div>
+            <div class="dropdown-row"><img src="../img/necessary-images/my_favor.png" height="20" width="20">
+                <a href="my_favor.html">My favor</a>
+            </div>
+            <div class="dropdown-row"><img src="../img/necessary-images/login.png" height="20" width="20">
+                <a href="../index.html">Log in</a>
+            </div>
+        </div>
+    </div>
+</header>
+<section>
+    <!--上传照片部分-->
+    <p>Upload</p>
+    <div id="picture_upload">
+        <div id="preview">Please upload your photo</div>
+        <input type="file" onchange=uploadImage(this,"preview");>
+    </div>
+    <div id="picture_detail">
+        <form method="get" action="my_photo.html">
+            <p>Picture Title</p>
+            <input type="text">
+            <p>Picture Description</p>
+            <textarea></textarea>
+            <p>Shooting Country</p>
+            <input type="text">
+            <p>Shooting City</p>
+            <input type="text"><br>
+            <input onclick="alert('上传成功')" type="submit" value="Upload">
+        </form>
+    </div>
+</section>
+<!--页脚部分-->
+<footer>Copyright © 2020 QQD All Rights Reserved</footer>
+</body>
+</html>

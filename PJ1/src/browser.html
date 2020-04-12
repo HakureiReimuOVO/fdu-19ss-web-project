@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Browser</title>
+    <link type="text/css" rel="styleSheet" href="CSS/reset.css">
+    <link type="text/css" rel="styleSheet" href="CSS/browser.css">
+    <script>
+        //实现二级联动
+        cities = {};
+        cities["China"] = ["Shanghai", "Kunming", "Beijing", "Yantai"];
+        cities["Japan"] = ["Tokyo", "Osaka", "Kamakura"];
+        cities["Italy"] = ["Roma", "Milan", "Venice", "Florence"];
+        cities["America"] = ["New York", "San Francisco", "Washington"];
+
+        function selectCityByCountry(country, city) {
+            var cty;
+            cty = country.value;
+            for (var i = 1; i < city.options.length; i++) {
+                city.removeChild(city.options[i]);
+                city.options.length = 1;
+            }
+            if (cty == "0") return;
+            for (var i = 0; i < cities[cty].length; i++) {
+                city.options[i + 1] = new Option();
+                city.options[i + 1].text = cities[cty][i];
+                city.options[i + 1].value = cities[cty][i];
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <!--导航栏部分-->
+    <a class="navigation" href="home.html">HOME</a>
+    <a class="navigation" href="browser.html" id="active">BROWSE</a>
+    <a class="navigation" href="search.html">SEARCH</a>
+    <div class="dropdown">
+        <!--下拉菜单部分-->
+        <span class="dropdown-button">My Account</span>
+        <div class="dropdown-content">
+            <div class="dropdown-row">
+                <img src="../img/necessary-images/upload.png" height="20" width="20">
+                <a href="upload.html">Upload</a>
+            </div>
+            <div class="dropdown-row"><img src="../img/necessary-images/my_photo.png" height="20" width="20">
+                <a href="my_photo.html">My photo</a>
+            </div>
+            <div class="dropdown-row"><img src="../img/necessary-images/my_favor.png" height="20" width="20">
+                <a href="my_favor.html">My favor</a>
+            </div>
+            <div class="dropdown-row"><img src="../img/necessary-images/login.png" height="20" width="20">
+                <a href="../index.html">Log in</a>
+            </div>
+        </div>
+    </div>
+</header>
+<aside>
+    <!--侧边筛选栏部分-->
+    <div id="search">
+        <p class="title_aside">Search by title</p>
+        <input type="text">
+        <a href="#" onclick="alert('搜索完毕')"><img src="../img/necessary-images/search.png" height="20" width="20"></a>
+    </div>
+    <div id="popular_content">
+        <p class="title_aside">Popular content</p>
+        <ul>
+            <li><a href="#" onclick="alert('已筛选图片')">Scenery</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">City</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">People</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">Animal</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">Building</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">Wonder</a></li>
+        </ul>
+    </div>
+    <div id="popular_country">
+        <p class="title_aside">Popular country</p>
+        <ul>
+            <li><a href="#" onclick="alert('已筛选图片')">China</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">Italy</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">Japan</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">America</a></li>
+        </ul>
+    </div>
+    <div id="popular_city">
+        <p class="title_aside">Popular city</p>
+        <ul>
+            <li><a href="#" onclick="alert('已筛选图片')">Shanghai</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">Venice</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">Tokyo</a></li>
+            <li><a href="#" onclick="alert('已筛选图片')">New York</a></li>
+        </ul>
+    </div>
+</aside>
+<section>
+    <p>Filter</p>
+    <div id="filter">
+        <!--筛选部分-->
+        <form>
+            <select name="content">
+                <option>Filter by content</option>
+                <option>Scenery</option>
+                <option>City</option>
+                <option>People</option>
+                <option>Animal</option>
+                <option>Building</option>
+                <option>Wonder</option>
+            </select>
+            <select name="country" onchange="selectCityByCountry(this,this.form.city);">
+                <option value="0">Filter by country</option>
+                <option value="China">China</option>
+                <option value="Italy">Italy</option>
+                <option value="Japan">Japan</option>
+                <option value="America">America</option>
+            </select>
+            <select name="city">
+                <option value="0">Filter by city</option>
+            </select>
+            <input type="submit" value="Filter" onclick="alert('根据条件筛选完毕')">
+        </form>
+    </div>
+    <div id="photo">
+        <!--筛选图片结果部分-->
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/9504609042.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/6114881215.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/9502741759.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/6119127716.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/6592294487.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/9496792166.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/8645912379.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/6114907897.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/222222.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/5855191275.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/8152045688.jpg">
+            </div>
+        </a>
+        <a href="details.html">
+            <div class="img-container">
+                <img src="../img/travel-images/normal/medium/9504613978.jpg">
+            </div>
+        </a>
+    </div>
+    <div id="page">
+        <!--页码部分-->
+        <a><</a>
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+        <a>></a>
+    </div>
+</section>
+<!--页脚部分-->
+<footer>Copyright © 2020 QQD All Rights Reserved</footer>
+</body>
+</html>
