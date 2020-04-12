@@ -1,7 +1,5 @@
 # PROJECT 1
-> 19302010009 钱麒丹
-
------
+19302010009 钱麒丹
 ## Project的完成情况
 我以较高的完成度圆满完成了本次PJ的任务。
 包括index，register，home，browser，search，my_photo，my_favor，upload，details这九个页面。
@@ -23,7 +21,6 @@
 
 > details为照片的详情页面。
 
------
 ## Bonus的完成情况
 ### Bonus1：更复杂的图片处理
 自由版式图片的处理我使用了如下的解决方法。
