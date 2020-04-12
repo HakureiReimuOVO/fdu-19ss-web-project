@@ -5,7 +5,8 @@
 ## Project的完成情况
 我以较高的完成度圆满完成了本次PJ的任务。
 包括index，register，home，browser，search，my_photo，my_favor，upload，details这九个页面。
-index.html为引导用户进入主页的登录页面。
+> index.html为引导用户进入主页的登录页面。
+
 > register.html为注册页面。
 
 > home.html为网站主页。
