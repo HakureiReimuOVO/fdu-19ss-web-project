@@ -19,9 +19,9 @@
 
 > my_favor.html为用户收藏照片的页面。
 
-> upload为用户上传照片的页面。
+> upload.html为用户上传照片的页面。
 
-> details为照片的详情页面。
+> details.html为照片的详情页面。
 
 ## Bonus的完成情况
 ### Bonus1：更复杂的图片处理
