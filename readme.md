@@ -1,5 +1,7 @@
 # PROJECT 1
 19302010009 钱麒丹
+> 静态网址:https://hakureireimuovo.github.io/fdu-19ss-web-project/
+
 ## Project的完成情况
 我以较高的完成度圆满完成了本次PJ的任务。
 包括index，register，home，browser，search，my_photo，my_favor，upload，details这九个页面。
